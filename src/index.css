@@ -43,7 +43,7 @@ li {
   margin: 0 7px 0 0;
 }
 
-.header__link {
+.button {
   min-height: 40px;
   border-top: 2px solid #c9c9c9;
   border-left: 2px solid #c9c9c9;
@@ -58,7 +58,7 @@ li {
   font-weight: 600;
 }
 
-.header__link:active {
+.button:active {
   border-bottom: 2px solid #c9c9c9;
   border-right: 2px solid #c9c9c9;
   border-top: 2px solid #424242;
@@ -132,7 +132,7 @@ li {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(66, 66, 66, 0.5);
+    background-color: rgba(66, 66, 66, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,7 +150,7 @@ li {
     width: 200px;
   }
 
-  .header__link {
+  .button {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -163,3 +163,64 @@ li {
   height: 30px;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1010;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 10px solid #c9c9c9;
+  border-right: 10px solid #c9c9c9;
+  border-top: 10px solid #424242;
+  border-left: 10px solid #424242;
+}
+
+.modal > *:not(:last-child) {
+  margin: 0 0 1.5rem 0;
+}
+
+.modal__form > *:not(:last-child) {
+  margin: 0 0 1.5rem 0;
+}
+
+
+.modal__title {
+  text-decoration: underline;
+}
+
+.modal__button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.level > *:not(:last-child) {
+  margin: 0 0 0.5rem 0;
+}
+
+.level__label {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+}
+
+.level__label input[type='radio'] {
+  margin: 0 0.6rem 0 0;
+}
+
+/*------footer-------*/
+
+.footer__autor {
+  font-size: 0.5rem;
+}
+
+.footer__link {
+  font-size: 0.5rem;
+}

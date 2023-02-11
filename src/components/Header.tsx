@@ -21,13 +21,13 @@ export const Header: FC = () => {
             </button>
             <ul className="header__list">
                 <li className="header__item">
-                    <Link className='header__link' to='/'>Game</Link>
+                    <Link className='button' to='/'>Game</Link>
                 </li>
                 <li className="header__item">
-                    <Link className='header__link' to='/Leaders'>List of Leaders</Link>
+                    <Link className='button' to='/Leaders'>List of Leaders</Link>
                 </li>
                 <li className="header__item">
-                    <Link className='header__link' to='/Setting'>Settings</Link>
+                    <Link className='button' to='/Setting'>Settings</Link>
                 </li>
             </ul>
         </header>
