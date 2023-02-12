@@ -3,13 +3,15 @@ import { ILevel } from '../interface/ILevel';
 
 interface IProps {
     levelList: ILevel
+    select(e: React.ChangeEvent<HTMLInputElement>, id: number): void
 }
 
-export const LevelItem: FC<IProps> = ({levelList}: IProps) => {
+export const LevelItem: FC<IProps> = ({levelList, select}: IProps) => {
     const [checked, setChecked] = useState(false);
 
-    const changeCheck = () => {
+    const changeCheck = (e: React.ChangeEvent<HTMLInputElement>, id: number) => {
         setChecked(!checked)
+        select(e, id)
     }
 
     return(
@@ -20,7 +22,7 @@ export const LevelItem: FC<IProps> = ({levelList}: IProps) => {
                         id={levelList.level}
                         name='level'
                         checked={checked}
-                        onChange={changeCheck}
+                        onChange={(e) => changeCheck(e, levelList.id)}
                     />
             {levelList.title}</label>
         </li>

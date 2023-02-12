@@ -1,5 +1,5 @@
 export interface IUser {
     name: string
-    time: number
+    time?: number
     id: number
 }

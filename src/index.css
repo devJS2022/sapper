@@ -224,3 +224,18 @@ li {
 .footer__link {
   font-size: 0.5rem;
 }
+
+/*----errors----*/
+
+.error {
+  color:rgba(216, 85, 85, 0.7);
+}
+
+
+/*-------game------*/
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
