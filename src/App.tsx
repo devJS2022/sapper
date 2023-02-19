@@ -13,6 +13,8 @@ function App() {
   const [users, setUsers] = useState<IUser[]>([])
   const [errorName, setErrorName] = useState<boolean>(false)
   const [errorLevel, setErrorLevel] = useState<boolean>(false)
+  const [row, setRow] = useState<number>(0)
+  const [col, setCol] = useState<number>(0)
 
   useEffect(() => {
     setModal(true)
@@ -36,14 +38,19 @@ function App() {
     setModal(false)
   }
 
+  const levelTable = (sizeCol:number, sizeRow: number, time: number) => {
+    setRow(sizeRow)
+    setCol(sizeCol)
+  }
+
   
   return (
     <div className="App">
-      {modal && <Modal  newGame={newGame} errorName={errorName} errorLevel={errorLevel}/>}
+      {modal && <Modal  newGame={newGame} errorName={errorName} errorLevel={errorLevel} levelTable={levelTable}/>}
       <Header />
       <main>
         <Routes>s
-          <Route path='/' element={<Game />} />
+          <Route path='/' element={<Game col={col} row={row}/>} />
           <Route path='/Setting' element={<Setting/>} />
           <Route path='/Leaders' element={<Leaders/>} />
         </Routes>

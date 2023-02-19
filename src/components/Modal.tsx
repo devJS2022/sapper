@@ -1,4 +1,4 @@
-import {FC, useState} from 'react';
+import React, {FC, useState} from 'react';
 import { Level } from './Level';
 import { Footer } from './Footer';
 import { ErrorName } from './ErrorName';
@@ -6,20 +6,22 @@ import { ErrorLevel } from './ErrorLevel';
 
 interface IProps {
     newGame(name:string, id: number): void
+    levelTable(sizeRow: number, sizeCol: number, time: number): void
     errorName: boolean
     errorLevel: boolean
 }
 
-export const Modal: FC<IProps> = ({newGame, errorName, errorLevel}: IProps) => {
+export const Modal: FC<IProps> = ({newGame, errorName, errorLevel, levelTable}: IProps) => {
     const [name, setName] = useState('')
     const [level, setLevel] = useState(0)
+
 
     const getName = (e: React.FormEvent<HTMLInputElement>) => {
         setName(e.currentTarget.value)
     }
 
     const selectLevel = (e: React.ChangeEvent<HTMLInputElement>, id: number) => {
-            setLevel(id)
+        setLevel(id)
     }
 
 
@@ -36,7 +38,7 @@ export const Modal: FC<IProps> = ({newGame, errorName, errorLevel}: IProps) => {
                     placeholder='Enter a name...'
                     className='button modal__input'
                 />
-                <Level select={selectLevel}/>
+                <Level select={selectLevel} levelTable={levelTable}/>
                 <button 
                     className='button modal__button'
                     type='button'

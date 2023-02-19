@@ -1,10 +1,16 @@
+import React from 'react';
 import {FC} from 'react'
 import { Table } from '../components/Table';
 
-export const Game: FC = () => {
+interface IProps {
+    col: number
+    row: number
+}
+
+export const Game: FC<IProps> = ({col, row}: IProps) => {
     return(
         <div className="game">
-            <Table />
+            <Table col={col} row={row}/>
         </div>
     )
 }

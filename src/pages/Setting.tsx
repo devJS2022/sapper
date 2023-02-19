@@ -1,7 +1,8 @@
-import {FC} from 'react'
+import React,{FC} from 'react'
+import { Level } from '../components/Level'
 
 export const Setting: FC = () => {
     return(
-        <div className="setting">setting</div>
+        <Level />
     )
 }

@@ -4,9 +4,21 @@
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'Chakra Petch', sans-serif;
 }
+
+.App {
+  height: 84vh;
+}
+
+
+main,
+.game {
+  height: 100%;
+}
+
 
 a {
   color: inherit;
@@ -158,10 +170,6 @@ li {
 
 }
 
-.table__item {
-  width: 30px;
-  height: 30px;
-}
 
 .modal {
   position: fixed;
@@ -238,4 +246,56 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.table {
+
+}
+
+
+.table__item {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.table__item.invisible {
+  background-color: #838181;
+  /* position: relative; */
+  /* z-index: 2; */
+}
+
+.bomb {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+}
+
+.explousion {
+  display: none;;
+  width: 26px;
+  height: 26px;
+  z-index: -1;
+}
+
+.explousion.visible {
+  display: block;;
+}
+
+
+@media(max-width: 500px) {
+  .table__item {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media(max-width: 410px) {
+  .table__item {
+    width: 20px;
+    height: 20px;
+  }
 }

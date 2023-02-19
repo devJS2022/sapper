@@ -1,17 +1,22 @@
-import {FC, useState} from 'react';
+import React,{FC, useState} from 'react';
 import { ILevel } from '../interface/ILevel';
 
 interface IProps {
     levelList: ILevel
     select(e: React.ChangeEvent<HTMLInputElement>, id: number): void
+    levelTable(sizeRow: number, sizeCol: number, time: number): void
+    sizeCol: number
+    sizeRow: number
+    time: number
 }
 
-export const LevelItem: FC<IProps> = ({levelList, select}: IProps) => {
+export const LevelItem: FC<IProps> = ({levelList, select, levelTable, sizeCol, sizeRow, time}: IProps) => {
     const [checked, setChecked] = useState(false);
 
     const changeCheck = (e: React.ChangeEvent<HTMLInputElement>, id: number) => {
         setChecked(!checked)
         select(e, id)
+        levelTable(sizeRow, sizeCol, time)
     }
 
     return(
